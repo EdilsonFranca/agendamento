@@ -1,0 +1,168 @@
+<div class="container-fluid bg-light min-vh-100 py-4">
+  <div class="container">
+
+    <!-- Cabeçalho -->
+    <div class="row align-items-center mb-4">
+      <div class="col-12 col-md-7">
+        <h2 class="fw-bold text-dark mb-1">
+          <i class="bi bi-arrow-left-right me-2 text-primary"></i>
+          Transferências
+        </h2>
+        <p class="text-secondary mb-0">
+          Consulte todas as transferências agendadas.
+        </p>
+      </div>
+
+      <div class="col-12 col-md-5 text-md-end mt-3 mt-md-0">
+        <a routerLink="/agendamento" class="btn btn-primary">
+          <i class="bi bi-plus-lg me-2"></i>
+          Nova transferência
+        </a>
+      </div>
+    </div>
+
+    <!-- Cards de resumo -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body d-flex align-items-center">
+            <div class="bg-primary bg-opacity-10 text-primary rounded-3 p-3 me-3">
+              <i class="bi bi-list-ul fs-3"></i>
+            </div>
+            <div>
+              <p class="text-secondary mb-1">Total de transferências</p>
+              <h4 class="fw-bold mb-0">{{ transferencias.length }}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body d-flex align-items-center">
+            <div class="bg-success bg-opacity-10 text-success rounded-3 p-3 me-3">
+              <i class="bi bi-currency-dollar fs-3"></i>
+            </div>
+            <div>
+              <p class="text-secondary mb-1">Valor das transferências</p>
+              <h4 class="fw-bold mb-0">
+                {{ calcularTotal() | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body d-flex align-items-center">
+            <div class="bg-warning bg-opacity-10 text-warning rounded-3 p-3 me-3">
+              <i class="bi bi-calendar-check fs-3"></i>
+            </div>
+            <div>
+              <p class="text-secondary mb-1">Agendamentos</p>
+              <h4 class="fw-bold mb-0">{{ transferencias.length }}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela -->
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-white border-0 p-3 p-md-4">
+        <h5 class="fw-bold mb-1">Histórico</h5>
+        <p class="text-secondary small mb-0">
+          Lista de transferências cadastradas no sistema.
+        </p>
+      </div>
+
+      <div class="card-body p-0">
+        @if (carregando) {
+          <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Carregando...</span>
+            </div>
+            <p class="text-secondary mt-3 mb-0">
+              Carregando transferências...
+            </p>
+          </div>
+        } @else if (transferencias.length === 0) {
+          <div class="text-center py-5 px-3">
+            <i class="bi bi-inbox display-4 text-secondary"></i>
+            <h5 class="mt-3">Nenhuma transferência encontrada</h5>
+            <p class="text-secondary">
+              Você ainda não possui transferências cadastradas.
+            </p>
+            <a routerLink="/agendamento" class="btn btn-primary">
+              Agendar transferência
+            </a>
+          </div>
+        } @else {
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light">
+              <tr>
+                <th class="ps-3 ps-md-4">ID</th>
+                <th>Conta de origem</th>
+                <th>Conta de destino</th>
+                <th>Data da transferência</th>
+                <th>Valor</th>
+                <th>Taxa</th>
+                <th>Valor total</th>
+              </tr>
+              </thead>
+
+              <tbody>
+                @for (transferencia of transferencias; track transferencia.id) {
+                  <tr>
+                    <td class="ps-3 ps-md-4 fw-semibold">
+                      #{{ transferencia.id }}
+                    </td>
+
+                    <td>{{ transferencia.contaOrigem }}</td>
+
+                    <td>{{ transferencia.contaDestino }}</td>
+
+                    <td>
+                      {{ transferencia.dataTransferencia | date:'dd/MM/yyyy' }}
+                    </td>
+
+                    <td class="text-nowrap">
+                      {{ transferencia.valor | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+                    </td>
+
+                    <td class="text-nowrap">
+                      {{ transferencia.taxa | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+                    </td>
+
+                    <td class="fw-bold text-success text-nowrap">
+                      {{ transferencia.valorTotal | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        }
+      </div>
+
+      <div class="card-footer bg-white border-0 py-3">
+        <span class="text-secondary small">
+          Exibindo {{ transferencias.length }}
+          transferência(s).
+        </span>
+      </div>
+    </div>
+
+    <!-- Voltar -->
+    <div class="mt-4">
+      <a routerLink="/" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left me-2"></i>
+        Voltar para início
+      </a>
+    </div>
+
+  </div>
+</div>
+

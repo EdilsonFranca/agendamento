@@ -7,10 +7,9 @@ const API = environment.ApiUrl;
   providedIn: 'root',
 })
 export class TransferenciaService {
-
   constructor(private http: HttpClient) {}
 
-  getResumes() {
+  listarTodos() {
     return this.http.get<Transferencia[]>(`${API}/transferencia`);
   }
 }
