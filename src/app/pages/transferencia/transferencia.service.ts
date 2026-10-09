@@ -10,6 +10,6 @@ export class TransferenciaService {
   constructor(private http: HttpClient) {}
 
   listarTodos() {
-    return this.http.get<Transferencia[]>(`${API}/transferencia`);
+    return this.http.get<Transferencia[]>(`${API}/api/v1/transferencias`);
   }
 }
