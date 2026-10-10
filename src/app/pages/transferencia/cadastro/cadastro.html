@@ -1,17 +1,29 @@
 <div class="container-fluid bg-light min-vh-100 py-3">
   <div class="container">
     @if (mensagemErro) {
-      <div class="alert alert-danger" role="alert">
+      <div class="alert alert-danger d-flex justify-content-between" role="alert">
         {{ mensagemErro }}
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Fechar mensagem"
+          (click)="mensagemErro = ''">
+        </button>
       </div>
     }
 
     @if (mensagemSucesso) {
-      <div class="alert alert-success" role="alert">
+      <div class="alert alert-success d-flex justify-content-between" role="alert">
         {{ mensagemSucesso }}
-        <a routerLink="/transferencias" class="alert-link">
+        <a routerLink="/transferencias/novo" class="alert-link">
           Ver transferências
         </a>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Fechar mensagem"
+          (click)="mensagemSucesso = ''">
+        </button>
       </div>
     }
     <!-- Cabeçalho -->
@@ -179,12 +191,7 @@
                 </small>
 
                 <div class="d-flex gap-2">
-                  <a
-                    routerLink="/transferencias"
-                    class="btn btn-outline-secondary"
-                  >
-                    Cancelar
-                  </a>
+
                   <button
                     type="submit"
                     class="btn btn-primary px-3"

@@ -72,8 +72,19 @@ export class Cadastro {
       return;
     }
 
+
     if (!this.dataTransferencia) {
       this.mensagemErro = 'Informe a data da transferência.';
+      return;
+    }
+
+    const data = new Date(`${this.dataTransferencia}T00:00:00`);
+
+    if (
+      Number.isNaN(data.getTime()) ||
+      data.toISOString().slice(0, 10) !== this.dataTransferencia
+    ) {
+      this.mensagemErro = 'Informe uma data válida.';
       return;
     }
 

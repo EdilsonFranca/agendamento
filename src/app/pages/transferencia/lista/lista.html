@@ -94,27 +94,26 @@
                 <th>Valor total</th>
               </tr>
               </thead>
-
               <tbody>
                 @for (transferencia of transferencias; track transferencia.id) {
                   <tr>
-                    <td class="ps-3 ps-md-4 fw-semibold">
+                    <td class="ps-3 ps-md-4 fw-semibold text-muted">
                       #{{ transferencia.id }}
                     </td>
 
-                    <td>{{ transferencia.contaOrigem }}</td>
+                    <td class="text-muted">{{ transferencia.contaOrigem }}</td>
 
-                    <td>{{ transferencia.contaDestino }}</td>
+                    <td class="text-muted">{{ transferencia.contaDestino }}</td>
 
-                    <td>
+                    <td class="text-muted">
                       {{ transferencia.dataTransferencia | date:'dd/MM/yyyy' }}
                     </td>
 
-                    <td class="text-nowrap">
+                    <td class="text-nowrap text-muted">
                       {{ transferencia.valor | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
                     </td>
 
-                    <td class="text-nowrap">
+                    <td class="text-nowrap text-muted">
                       {{ transferencia.taxa | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
                     </td>
 
