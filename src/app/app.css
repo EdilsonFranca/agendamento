@@ -107,10 +107,6 @@
     display: none;
   }
 
-  .sidebar nav {
-    flex-direction: row !important;
-    flex-wrap: wrap;
-  }
 
   .menu-link {
     padding: 10px;

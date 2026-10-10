@@ -12,4 +12,10 @@ export class TransferenciaService {
   listarTodos() {
     return this.http.get<Transferencia[]>(`${API}/api/v1/transferencias`);
   }
+
+  agendar(dados: Transferencia) {
+    return this.http.post<Transferencia>(`${API}/api/v1/transferencias`, dados);
+  }
+
 }
+

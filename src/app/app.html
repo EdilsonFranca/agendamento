@@ -1,48 +1,69 @@
+
 <div class="container-fluid p-0">
   <div class="row g-0 min-vh-100">
-    <!-- Menu lateral -->
-    <aside class="col-12 col-lg-3 col-xl-2 sidebar p-4 d-flex flex-column">
-      <a routerLink="/" class="brand text-decoration-none mb-5">
+
+    <!-- Menu lateral / superior -->
+    <aside
+      class="col-12 col-lg-3 col-xl-2 sidebar p-3 p-lg-4 d-flex flex-column"
+    >
+      <!-- Marca -->
+      <a routerLink="/" class="brand text-decoration-none mb-3 mb-lg-5">
         <span class="brand-icon me-2">↗</span>
         Transfere<span class="brand-plus">+</span>
       </a>
 
-      <p class="menu-title mb-3">MENU PRINCIPAL</p>
+      <p class="menu-title mb-2 mb-lg-3">
+        MENU PRINCIPAL
+      </p>
 
-      <nav class="nav flex-column gap-2">
+      <!-- Navegação -->
+      <nav class="nav d-flex flex-column ">
         <a
           routerLink="/"
           routerLinkActive="active"
-          class="nav-link menu-link">
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link menu-link"
+        >
           <span class="menu-icon me-2">⌂</span>
           Início
         </a>
-
+        <!-- Lista -->
         <a
           routerLink="/transferencias"
           routerLinkActive="active"
-          class="nav-link menu-link">
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link menu-link"
+        >
           <span class="menu-icon me-2">⇄</span>
-          Listar transferências
+          <span>Lista</span>
         </a>
 
+        <!-- Novo -->
         <a
           routerLink="/transferencias/novo"
           routerLinkActive="active"
-          class="nav-link menu-link">
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link menu-link"
+        >
           <span class="menu-icon me-2">＋</span>
-          Novo agendamento
+          <span>Novo</span>
         </a>
       </nav>
 
+      <!-- Rodapé do menu -->
       <div class="sidebar-footer mt-auto pt-4">
         <span class="online-dot me-2"></span>
         Sistema de transferências
-        <small class="d-block mt-2 ms-4">Ambiente local</small>
+        <small class="d-block mt-2 ms-4">
+          Ambiente local
+        </small>
       </div>
     </aside>
-    <main class="col main-area">
-    <router-outlet />
+
+    <!-- Conteúdo principal -->
+    <main class="col-12 col-lg main-area">
+      <router-outlet />
     </main>
+
   </div>
 </div>
