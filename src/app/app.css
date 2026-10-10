@@ -1,0 +1,119 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  color: #192a43;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.sidebar {
+  background: #11213a;
+  color: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: -0.7px;
+}
+
+.brand-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #45d1aa;
+  color: #11213a;
+  font-size: 25px;
+}
+
+.brand-plus {
+  margin-left: -8px;
+  color: #45d1aa;
+}
+
+.menu-title {
+  color: #8496b1;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.menu-link {
+  border-radius: 9px;
+  color: #c4cede;
+  font-size: 13px;
+}
+
+.menu-link:hover,
+.menu-link.active {
+  background: #263c59;
+  color: #fff;
+}
+
+.menu-link.active {
+  box-shadow: inset 3px 0 #45d1aa;
+}
+
+.menu-icon {
+  display: inline-block;
+  width: 23px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.sidebar-footer {
+  border-top: 1px solid #30415b;
+  color: #d0d9e7;
+  font-size: 11px;
+}
+
+.sidebar-footer small {
+  color: #8496b1;
+}
+
+.online-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #45d1aa;
+}
+
+.main-area {
+  min-width: 0;
+  background: #f5f7fb;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    min-height: auto;
+  }
+
+  .sidebar .brand {
+    margin-bottom: 1rem !important;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .sidebar nav {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+  }
+
+  .menu-link {
+    padding: 10px;
+    font-size: 12px;
+  }
+}

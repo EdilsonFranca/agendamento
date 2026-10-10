@@ -10,6 +10,7 @@ export const routes: Routes = [
     path: 'transferencias',
     loadComponent: () => import('./pages/transferencia/lista/lista').then((m) => m.Lista),
   },
+
   {
     path: '**',
     redirectTo: '',

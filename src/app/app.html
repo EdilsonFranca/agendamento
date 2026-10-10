@@ -1,1 +1,48 @@
-<router-outlet />
+<div class="container-fluid p-0">
+  <div class="row g-0 min-vh-100">
+    <!-- Menu lateral -->
+    <aside class="col-12 col-lg-3 col-xl-2 sidebar p-4 d-flex flex-column">
+      <a routerLink="/" class="brand text-decoration-none mb-5">
+        <span class="brand-icon me-2">↗</span>
+        Transfere<span class="brand-plus">+</span>
+      </a>
+
+      <p class="menu-title mb-3">MENU PRINCIPAL</p>
+
+      <nav class="nav flex-column gap-2">
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          class="nav-link menu-link">
+          <span class="menu-icon me-2">⌂</span>
+          Início
+        </a>
+
+        <a
+          routerLink="/transferencias"
+          routerLinkActive="active"
+          class="nav-link menu-link">
+          <span class="menu-icon me-2">⇄</span>
+          Listar transferências
+        </a>
+
+        <a
+          routerLink="/transferencias/novo"
+          routerLinkActive="active"
+          class="nav-link menu-link">
+          <span class="menu-icon me-2">＋</span>
+          Novo agendamento
+        </a>
+      </nav>
+
+      <div class="sidebar-footer mt-auto pt-4">
+        <span class="online-dot me-2"></span>
+        Sistema de transferências
+        <small class="d-block mt-2 ms-4">Ambiente local</small>
+      </div>
+    </aside>
+    <main class="col main-area">
+    <router-outlet />
+    </main>
+  </div>
+</div>
