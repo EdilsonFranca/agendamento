@@ -1,0 +1,13 @@
+.tabela-scroll-vertical {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/* Mantém o cabeçalho visível durante a rolagem */
+.tabela-scroll-vertical thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: #f8f9fa;
+}
