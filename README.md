@@ -24,7 +24,7 @@ Antes de executar o projeto, certifique-se de ter instalado:
 Clone o repositório:
 
 ```bash
-git clone https://githugfb.com/EdilsonFranca/agendamento.git
+git clone https://github.com/EdilsonFranca/agendamento.git
 cd agendamento
 ```
 
