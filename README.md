@@ -1,59 +1,93 @@
-# Agendamento
+# Agendamento — Front-end
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.2.
+Aplicação front-end desenvolvida com Angular para consumir a API de agendamento de transferências, permitindo cadastrar e consultar transferências com cálculo de taxas conforme as regras de negócio.
 
-## Development server
+## Tecnologias utilizadas
 
-To start a local development server, run:
+- **Angular 22** — desenvolvimento da aplicação front-end.
+- **TypeScript 6** — linguagem de programação.
+- **Bootstrap 5** — estilização e layout responsivo.
+- **RxJS** — programação reativa e operações assíncronas.
+- **Angular Router** — gerenciamento de rotas.
+- **Angular Forms** — criação e validação de formulários.
 
-```bash
-ng serve
-```
+## Pré-requisitos
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Antes de executar o projeto, certifique-se de ter instalado:
 
-## Code scaffolding
+- Node.js compatível com Angular 22.
+- npm 11 ou compatível.
+- API de agendamento configurada e em execução.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalação
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Clone o repositório:
 
 ```bash
-ng build
+git clone https://githugfb.com/EdilsonFranca/agendamento.git
+cd agendamento
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Instale as dependências:
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
+## Executando a aplicação
 
-For end-to-end (e2e) testing, run:
+Inicie o servidor de desenvolvimento:
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Por padrão, o Angular disponibiliza a aplicação em:
 
-## Additional Resources
+http://localhost:4200
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Comandos disponíveis
+
+| Comando | Descrição |
+|---|---|
+| `npm start` | Inicia o servidor de desenvolvimento. |
+| `npm run build` | Gera a versão de produção. |
+| `npm run watch` | Compila continuamente em modo de desenvolvimento. |
+| `npm test` | Executa os testes automatizados. |
+
+## Integração com a API
+
+A aplicação consome a API de agendamento de transferências, responsável pelo processamento das solicitações e pelas regras de cálculo das taxas.
+
+Endpoint principal:
+
+```http
+/api/v1/transferencias
+```
+
+- `POST /api/v1/transferencias` — cadastra uma transferência.
+- `GET /api/v1/transferencias` — consulta as transferências cadastradas.
+
+A URL base da API deve ser configurada conforme o ambiente de execução.
+
+## Build de produção
+
+Para gerar os arquivos otimizados para publicação:
+
+```bash
+npm run build
+```
+
+Os arquivos compilados são gerados no diretório `dist/`.
+
+## Testes
+
+Execute os testes automatizados com:
+
+```bash
+npm test
+```
+
+## Objetivo
+
+Projeto desenvolvido para praticar o desenvolvimento de aplicações web com Angular, integração com APIs REST, validação de formulários, organização de componentes e testes automatizados.
