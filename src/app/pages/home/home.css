@@ -1,0 +1,157 @@
+
+.main-area {
+  min-width: 0;
+  background: #f5f7fb;
+}
+
+.topbar {
+  min-height: 76px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e0f7ef;
+  color: #167e69;
+  font-weight: 750;
+}
+
+.eyebrow {
+  color: #16886e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.page-title {
+  max-width: 700px;
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 750;
+  letter-spacing: -1px;
+  line-height: 1.25;
+}
+
+.welcome-symbol {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: #e3f7f0;
+  color: #16886e;
+  font-size: 35px;
+}
+
+.hero-card {
+  position: relative;
+  background: linear-gradient(112deg, #142844, #1c4558);
+  color: white;
+}
+
+.hero-label {
+  color: #73e2c2;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+}
+
+.hero-title {
+  font-size: clamp(27px, 3vw, 36px);
+  font-weight: 750;
+  letter-spacing: -0.8px;
+  line-height: 1.18;
+}
+
+.hero-description {
+  color: #c6d6e2;
+  font-size: 12px;
+}
+
+.hero-button {
+  padding: 12px 17px;
+  border: 0;
+  background: #45d1aa;
+  color: #10243b;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.hero-button:hover {
+  background: #70e4c4;
+  color: #10243b;
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 210px;
+  height: 210px;
+}
+
+.hero-circle {
+  position: absolute;
+  width: 205px;
+  height: 205px;
+  border: 1px solid #7899a7;
+  border-radius: 50%;
+  opacity: 0.55;
+}
+
+.transfer-symbol {
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 105px;
+  height: 105px;
+  border: 1px solid #6c9b9f;
+  border-radius: 28px;
+  background: #ffffff12;
+  color: #7ae4c6;
+  font-size: 68px;
+  transform: rotate(-8deg);
+}
+
+.floating-card {
+  position: absolute;
+  right: -12px;
+  bottom: 4px;
+  padding: 11px 14px;
+  border: 1px solid #ffffff30;
+  border-radius: 9px;
+  background: #ffffff16;
+  color: #e7f7f2;
+  font-size: 10px;
+}
+
+.info-banner {
+  border: 1px solid #d9eee7;
+  border-radius: 12px;
+  background: #eff9f5;
+  color: #205b4d;
+}
+
+.info-icon {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #d4f0e5;
+  color: #167e69;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.info-banner strong {
+  font-size: 12px;
+}
+
+.info-banner p {
+  color: #63857c;
+  font-size: 11px;
+  line-height: 1.6;
+}
