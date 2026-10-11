@@ -15,7 +15,7 @@
     @if (mensagemSucesso) {
       <div class="alert alert-success d-flex justify-content-between" role="alert">
         {{ mensagemSucesso }}
-        <a routerLink="/transferencias/novo" class="alert-link">
+        <a routerLink="/transferencias" class="alert-link">
           Ver transferências
         </a>
         <button
@@ -79,7 +79,7 @@
                   </label>
 
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     id="contaOrigem"
                     name="contaOrigem"
@@ -100,7 +100,7 @@
                     Conta de destino
                   </label>
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     id="contaDestino"
                     name="contaDestino"
