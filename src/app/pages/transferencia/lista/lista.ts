@@ -19,6 +19,7 @@ export class Lista implements OnInit {
 
   transferencias: Transferencia[] = [];
   carregando = true;
+  mensagemErro = '';
 
   ngOnInit(): void {
     this.transferenciaService.listarTodos().subscribe({
@@ -29,6 +30,8 @@ export class Lista implements OnInit {
       },
       error: (erro) => {
         console.error('Erro ao listar transferências:', erro);
+        this.mensagemErro = 'Não foi possível conectar-se ao servidor. Tente novamente mais tarde.';
+        this.cdr.markForCheck();
         this.carregando = false;
       },
     });

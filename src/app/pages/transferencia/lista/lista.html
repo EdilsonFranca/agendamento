@@ -20,7 +20,17 @@
         </a>
       </div>
     </div>
-
+    @if (mensagemErro) {
+      <div class="alert alert-danger d-flex justify-content-between" role="alert">
+        {{ mensagemErro }}
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Fechar mensagem"
+          (click)="mensagemErro = ''">
+        </button>
+      </div>
+    }
     <!-- Cards de resumo -->
     <div class="row g-3 mb-4">
       <div class="col-12 col-sm-6 col-lg-4">
